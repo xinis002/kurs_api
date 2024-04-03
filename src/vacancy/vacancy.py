@@ -1,12 +1,18 @@
 import re
 
 from src.utils.currency_handler import get_currency_transfer
-
+from typing import Optional
 
 class Vacancy:
-    def __init__(self, name, city, salary_from, salary_to, currency, requirements, link):
+    def __init__(self, name: str, city: str, salary_from: Optional[int], salary_to: Optional[int],
+                 currency: Optional[str], requirements: str, link: str):
         self.name = name
         self.city = city
+        self.salary_from = salary_from
+        self.salary_to = salary_to
+        self.currency = currency
+        self.requirements = requirements
+        self.link = link
 
         if salary_from:
             self.salary_from = salary_from
